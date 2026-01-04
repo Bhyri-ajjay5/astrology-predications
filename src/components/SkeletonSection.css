@@ -1,0 +1,31 @@
+.skeleton-section {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.skeleton {
+  background: linear-gradient(90deg, #e0e0e0 25%, #f8f8f8 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite linear;
+  border-radius: 8px;
+}
+.skeleton-title {
+  height: 32px;
+  width: 70%;
+}
+.skeleton-text {
+  height: 18px;
+  width: 100%;
+}
+.skeleton-btn {
+  height: 40px;
+  width: 30%;
+}
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
