@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Redirecting...</title>
     <meta http-equiv="refresh" content="0" />
+    <style>
+      body { font-family: Arial, Helvetica, sans-serif; text-align:center; padding: 3rem; }
+      .notice { max-width: 720px; margin: 0 auto; color: #333; }
+      a.btn { display:inline-block; margin-top:16px; padding:12px 18px; background:#667eea; color:#fff; text-decoration:none; border-radius:8px; }
+    </style>
     <script>
       // SPA-friendly redirect for GitHub Pages: convert paths to hash-based routes
       (function () {
@@ -16,7 +21,24 @@
           var rest = parts.slice(2).join('/');
           var hash = rest ? '/#/' + rest : '/#/' ;
           var target = base + hash + window.location.search + window.location.hash;
-          // Replace current URL with hash-based route pointing at the same resource
+
+          // If base is empty, we likely are on the username root (no repo segment).
+          // In that case, try a safe fallback to the site root (may still 404).
+          if (!base) {
+            // redirect to root hash path
+            target = '/#/' + rest;
+          }
+
+          // Set a manual link for users with JS disabled or where replace fails
+          window.addEventListener('DOMContentLoaded', function () {
+            var link = document.getElementById('redirect-link');
+            if (link) {
+              link.href = target;
+              link.textContent = 'Go to this page: ' + target;
+            }
+          });
+
+          // Auto-redirect
           window.location.replace(target);
         } catch (e) {
           // Fallback to site root
@@ -26,6 +48,14 @@
     </script>
   </head>
   <body>
-    Redirecting...
+    <div class="notice">
+      <h1>Redirecting to the app…</h1>
+      <p>If you are not redirected automatically, click the link below to continue.</p>
+      <a id="redirect-link" class="btn" href="/">Open site</a>
+      <noscript>
+        <p>JavaScript is disabled in your browser. You can still open the site root:</p>
+        <a class="btn" href="/astrology-predications/">Open site root</a>
+      </noscript>
+    </div>
   </body>
 </html>
