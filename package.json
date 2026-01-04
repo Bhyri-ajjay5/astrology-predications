@@ -2,7 +2,16 @@
   "name": "astrology-predications",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://yourusername.github.io/astrology-predications",
+  "homepage": "https://bhyri-ajjay5.github.io/astrology-predications",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhyri-ajjay5/astrology-predications.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bhyri-ajjay5/astrology-predications/issues"
+  },
+  "author": "",
+  "license": "MIT",
   "scripts": {
     "start": "vite",
     "dev": "vite",
