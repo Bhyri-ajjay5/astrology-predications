@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Home() {
   return (
@@ -24,14 +25,14 @@ function Home() {
                 personalized astrology readings and detailed Kundali analysis
               </p>
               <div className="d-flex gap-3 justify-content-center flex-wrap">
-                <a href="/zodiac-signs" className="btn btn-light btn-lg px-5 py-3 fw-bold shadow">
+                <Link to="/zodiac-signs" className="btn btn-light btn-lg px-5 py-3 fw-bold shadow">
                   <i className="bi bi-stars me-2"></i>
                   Explore Zodiac Signs
-                </a>
-                <a href="/kundali" className="btn btn-outline-light btn-lg px-5 py-3 fw-bold">
+                </Link>
+                <Link to="/kundali" className="btn btn-outline-light btn-lg px-5 py-3 fw-bold">
                   <i className="bi bi-calendar-check me-2"></i>
                   Get Your Kundali
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -267,12 +268,12 @@ function Home() {
               Let the stars guide you toward clarity, purpose, and fulfillment
             </p>
             <div className="d-flex gap-3 justify-content-center flex-wrap">
-              <a href="/zodiac-signs" className="btn btn-light btn-lg px-5 py-3 fw-bold shadow">
+              <Link to="/zodiac-signs" className="btn btn-light btn-lg px-5 py-3 fw-bold shadow">
                 View All Zodiac Signs
-              </a>
-              <a href="/horoscope" className="btn btn-outline-light btn-lg px-5 py-3 fw-bold">
+              </Link>
+              <Link to="/horoscope" className="btn btn-outline-light btn-lg px-5 py-3 fw-bold">
                 Today's Horoscope
-              </a>
+              </Link>
             </div>
           </div>
         </div>
