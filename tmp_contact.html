@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Redirecting...</title>
+    <meta http-equiv="refresh" content="0" />
+    <script>
+      // SPA-friendly redirect for GitHub Pages: convert paths to hash-based routes
+      (function () {
+        try {
+          var path = window.location.pathname || '/';
+          var parts = path.split('/');
+          // base is the repo name (first segment after leading slash) or empty
+          var base = parts.length > 1 ? '/' + parts[1] : '';
+          var rest = parts.slice(2).join('/');
+          var hash = rest ? '/#/' + rest : '/#/' ;
+          var target = base + hash + window.location.search + window.location.hash;
+          // Replace current URL with hash-based route pointing at the same resource
+          window.location.replace(target);
+        } catch (e) {
+          // Fallback to site root
+          window.location.replace('/');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    Redirecting...
+  </body>
+</html>
